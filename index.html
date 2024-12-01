@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Digital Advent Calendar</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      #advent-calendar {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 15px;
+        max-width: 800px;
+        padding: 20px;
+      }
+      .calendar-door {
+        width: 100px;
+        height: 100px;
+        background-color: #d32f2f;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 48px;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        position: relative;
+      }
+      .calendar-door:hover:not(.locked) {
+        transform: scale(1.1);
+      }
+      .calendar-door.locked {
+        background-color: #999;
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+      .calendar-door.locked::after {
+        content: "🔒";
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="advent-calendar"></div>
+
+    <script>
+      // Generate a random sequence of numbers from 1 to 24
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      // Create the advent calendar
+      function createAdventCalendar() {
+        const calendar = document.getElementById("advent-calendar");
+        const numbers = shuffleArray(
+          Array.from({ length: 24 }, (_, i) => i + 1)
+        );
+        const currentDate = new Date();
+        const currentDay = currentDate.getDate();
+        const currentMonth = currentDate.getMonth() + 1;
+
+        numbers.forEach((number) => {
+          const door = document.createElement("div");
+          door.className = "calendar-door";
+          door.textContent = number;
+
+          // Determine if the door should be locked
+          if (
+            currentMonth < 12 ||
+            (currentMonth === 12 && currentDay < number)
+          ) {
+            door.classList.add("locked");
+            door.removeEventListener("click", () => openDoor(number));
+          } else {
+            door.addEventListener("click", () => openDoor(number));
+          }
+
+          calendar.appendChild(door);
+        });
+      }
+
+      // Open a door if the current date allows
+      function openDoor(number) {
+        const currentDate = new Date();
+        const currentDay = currentDate.getDate();
+        const currentMonth = currentDate.getMonth() + 1;
+
+        if (currentMonth === 12 && currentDay >= number) {
+          window.location.href = `${number}/5.html`;
+        } else if (currentMonth > 12) {
+          window.location.href = `${number}/5.html`;
+        } else {
+          alert(
+            `You can't open door ${number} yet! Wait until December ${number}th.`
+          );
+        }
+      }
+
+      // Initialize the calendar when the page loads
+      createAdventCalendar();
+    </script>
+  </body>
+</html>
