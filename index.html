@@ -125,16 +125,17 @@
           backContent.textContent = `Day ${number}`;
           door.appendChild(backContent);
 
-          // Determine if the door should be locked
-          if (
-            currentMonth < 12 ||
-            (currentMonth === 12 && currentDay < number)
-          ) {
-            door.classList.add("locked");
-            door.addEventListener("click", () => openDoor(door, number));
-          } else {
-            door.addEventListener("click", () => openDoor(door, number));
-          }
+          // // Determine if the door should be locked
+          // if (
+          //   currentMonth < 12 ||
+          //   (currentMonth === 12 && currentDay < number)
+          // ) {
+          //   door.classList.add("locked");
+          //   door.addEventListener("click", () => openDoor(door, number));
+          // } else {
+          //   door.addEventListener("click", () => openDoor(door, number));
+          // }
+          door.addEventListener("click", () => openDoor(door, number));
 
           calendar.appendChild(door);
         });
