@@ -1,29 +1,30 @@
 h1 {
-    font-size: 100px;
-    text-align: center;
-    color: #2a9d8f;
+  font-size: 100px;
+  text-align: center;
+  color: #2a9d8f;
 }
 div image {
-    width: 40%;
-    height: 40%;
-    align-items: center;
+  width: 40%;
+  height: 40%;
+  align-items: center;
 }
 div joke {
-    font-size: 40px;
-    color: #2a9d8f;
+  font-size: 40px;
+  color: #2a9d8f;
 }
-body { background-image:url("https://cdn.pixabay.com/photo/2017/10/26/19/45/red-2892235_1280.png"); 
-    background-repeat: no-repeat; 
-    text-align: center;
-    color: #ff6e6e;
-    background-size: 100% 100%;
-    font-family: fantasy;
+body {
+  background-image: url("red-2892235_1280.png");
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #ff6e6e;
+  background-size: 100% 100%;
+  font-family: fantasy;
 }
 h2 {
-    color: #2a9d8f;
+  color: #2a9d8f;
 }
 p {
-    font-size: 25px;
+  font-size: 25px;
 }
 div skibidi {
   font-size: 30px;
