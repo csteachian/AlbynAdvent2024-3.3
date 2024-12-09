@@ -125,17 +125,16 @@
           backContent.textContent = `Day ${number}`;
           door.appendChild(backContent);
 
-          // // Determine if the door should be locked
-          // if (
-          //   currentMonth < 12 ||
-          //   (currentMonth === 12 && currentDay < number)
-          // ) {
-          //   door.classList.add("locked");
-          //   door.addEventListener("click", () => openDoor(door, number));
-          // } else {
-          //   door.addEventListener("click", () => openDoor(door, number));
-          // }
-          door.addEventListener("click", () => openDoor(door, number));
+           // Determine if the door should be locked
+           if (
+             currentMonth < 12 ||
+             (currentMonth === 12 && currentDay < number)
+           ) {
+             door.classList.add("locked");
+             door.addEventListener("click", () => openDoor(door, number));
+           } else {
+             door.addEventListener("click", () => openDoor(door, number));
+           }
           calendar.appendChild(door);
         });
       }
@@ -146,19 +145,19 @@
         const currentDay = currentDate.getDate();
         const currentMonth = currentDate.getMonth() + 1;
 
-        // if (currentMonth === 12 && currentDay >= number) {
-        //   // Add opened class for flip animation
-        //   doorElement.classList.add("opened");
+         if (currentMonth === 12 && currentDay >= number) {
+           // Add opened class for flip animation
+           doorElement.classList.add("opened");
 
-        //   // Optional: Navigate to content page after a short delay
-        //   setTimeout(() => {
-        //     window.location.href = `${number}/${number}.html`;
-        //   }, 500);
-        // } else {
-        //   alert(
-        //     `You can't open door ${number} yet! Wait until December ${number}!`
-        //   );
-        // }
+           // Optional: Navigate to content page after a short delay
+           setTimeout(() => {
+             window.location.href = `${number}/${number}.html`;
+           }, 500);
+         } else {
+           alert(
+             `You can't open door ${number} yet! Wait until December ${number}!`
+           );
+         }
 
         // Add opened class for flip animation
         doorElement.classList.add("opened");
