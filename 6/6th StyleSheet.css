@@ -1,0 +1,77 @@
+body {
+    background-color: rgb(114, 206, 235);
+  }
+
+#Polar {
+    width: 800px;
+    height: 400px;
+}
+
+#Photo {
+    width: 900px;
+    height: 450px;
+}
+
+#tital {
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-size: 65px;
+}
+
+img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+#Music {
+    text-align: center;
+}
+
+#spacer {
+    color: rgb(114, 206, 235);
+    font-family: "Raleway", sans-serif;
+}
+
+#About {
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    font-size: 40px;
+}
+
+#description {
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(17, 17, 17);
+
+}
+
+#jokejoke {
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+#jokeanswer {
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+}
+
+#Joke {
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    font-size: 55px;
+}
+
+#Video {
+    width: 1100px;
+    height: 550px;
+}
+
+#Link {
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    font-size: 20px;
+}
+

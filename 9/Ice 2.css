@@ -1,0 +1,30 @@
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+body {
+    /* Set the background image */
+    background-image: url('3b66b.jpg');
+    
+    /* Ensure the image covers the entire screen */
+    background-size: cover;
+    
+    /* Make the image stay fixed while scrolling */
+    /* background-attachment: fixed; */
+    
+    /* Ensure the image does not repeat */
+    background-repeat: no-repeat;
+    
+    /* Set the background color (optional fallback color) */
+    background-color: #f0f0f0;
+    
+    /* Set minimum height for the body to cover the full viewport */
+    min-height: 100vh;
+    
+    /* Optional: Make sure text is visible on top of the background */
+    color: black;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    padding-top: 50px;
+}
+                                              
